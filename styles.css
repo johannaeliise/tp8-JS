@@ -28,20 +28,12 @@
 
 .cardBack {
   background-color: #aaa;
+  display: none;
 }
 .cardFront {
-  display: none;
   background-color: #333;
-  
 }
 
-.clicked .cardBack {
-  display: none;
-}
-
-.clicked .cardFront {
-  display: block;
-}
 .pic1 .cardFront {
   background-image: url(images/one.png);
   background-size: cover;
