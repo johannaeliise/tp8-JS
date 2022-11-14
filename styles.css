@@ -34,20 +34,19 @@
   height: 100%;
 }
 
-.card.clicked {
-  border: 1vw solid #333;
-}
 
 .cardBack {
    background-image: url(images/card.png);
-    
 }
 
 .cardFront {
   background-color: #333;
-  display: none;
+  display: block;
 }
 
+.card.clicked {
+  border: 1vw solid #333;
+}
 .clicked .cardBack {
 display: none;
 }
