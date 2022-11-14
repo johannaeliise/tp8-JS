@@ -28,10 +28,10 @@
 
 .cardBack {
   background-color: #aaa;
-  display: none;
 }
 .cardFront {
   background-color: #333;
+  display: none;
 }
 
 .pic1 .cardFront {
