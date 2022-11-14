@@ -5,7 +5,7 @@
 }
 
 #mainTable {
-  width: 80vw; 
+  width: 80vw;
   height: 80vh;
   position: relative;
   margin: 10vh auto;
@@ -25,10 +25,10 @@
   height: 100%;
 }
 
-
 .cardBack {
   background-color: #aaa;
 }
+
 .cardFront {
   background-color: #333;
   display: none;
@@ -43,5 +43,46 @@
   background-image: url(images/two.png);
   background-size: cover;
 }
+
+.pic3 .cardFront {
+  background-image: url(images/three.png);
+  background-size: cover;
+}
+
+.pic4 .cardFront {
+  background-image: url(images/four.png);
+  background-size: cover;
+}
+
+.pic5 .cardFront {
+  background-image: url(images/five.png);
+  background-size: cover;
+}
+
+.pic6 .cardFront {
+  background-image: url(images/six.png);
+  background-size: cover;
+}
+
+.pic7 .cardFront {
+  background-image: url(images/seven.png);
+  background-size: cover;
+}
+
+.pic8 .cardFront {
+  background-image: url(images/eight.png);
+  background-size: cover;
+}
+
+.pic9 .cardFront {
+  background-image: url(images/nine.png);
+  background-size: cover;
+}
+
+.pic10 .cardFront {
+  background-image: url(images/ten.png);
+  background-size: cover;
+}
+
 }
 
