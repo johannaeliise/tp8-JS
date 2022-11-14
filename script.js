@@ -1,9 +1,9 @@
 /* Javascript code for Tiny project #8 - js */
+cardsClicked = 0;
 
+function cardClicked(what){
 
-function cardClicked(what) {
-
-  if (!what.classList.contains("matched")) {
+  if (!what.classList.contains("removed")) {
 
     if (what.classList.contains("clicked")) {
     
@@ -34,21 +34,21 @@ function cardClicked(what) {
             } else if (clickedCards[0].classList.contains("pic2") && clickedCards[1].classList.contains("pic2")) {
               matched = true; //matches pic #2
             } else if (clickedCards[0].classList.contains("pic3") && clickedCards[1].classList.contains("pic3")) {
-              matched = true; //matches pic #2
+              matched = true; //matches pic #3
             } else if (clickedCards[0].classList.contains("pic4") && clickedCards[1].classList.contains("pic4")) {
-              matched = true; //matches pic #2
+              matched = true; //matches pic #4
             } else if (clickedCards[0].classList.contains("pic5") && clickedCards[1].classList.contains("pic5")) {
-              matched = true; //matches pic 2
+              matched = true; //matches pic #5
             } else if (clickedCards[0].classList.contains("pic6") && clickedCards[1].classList.contains("pic6")) {
-              matched = true; //matches pic 2
+              matched = true; //matches pic #6
             } else if (clickedCards[0].classList.contains("pic7") && clickedCards[1].classList.contains("pic7")) {
-              matched = true; //matches pic 2
+              matched = true; //matches pic #7
             } else if (clickedCards[0].classList.contains("pic8") && clickedCards[1].classList.contains("pic8")) {
-              matched = true; //matches pic 2
+              matched = true; //matches pic #8
             } else if (clickedCards[0].classList.contains("pic9") && clickedCards[1].classList.contains("pic9")) {
-              matched = true; //matches pic 2
+              matched = true; //matches pic #9
             } else if (clickedCards[0].classList.contains("pic10") && clickedCards[1].classList.contains("pic10")) {
-              matched = true; //matches pic 2
+              matched = true; //matches pic #10
             }
 
             if (matched) {
@@ -69,12 +69,12 @@ function cardClicked(what) {
               cardA.classList.remove("clicked");
               cardB.classList.remove("clicked");
 
-              cardA.classList.add("matched");
-              cardB.classList.add("matched");
+              cardA.classList.add("removed");
+              cardB.classList.add("removed");
 
               cardsClicked = 0;
 
-              checkWinning(); }, 1000);
+              checkWinning(); }, 500);
           }
 
           function unflipCards(cardA, cardB) {
@@ -84,14 +84,14 @@ function cardClicked(what) {
               cardB.classList.remove("clicked");
 
               cardsClicked = 0;
-            }, 1000);
+            }, 500);
           }
 
           function checkWinning() {
             remainingCards = document.querySelectorAll(".card");
 
             for (c = 0; c < remainingCards.length; c++) {
-              if (!remainingCards[c].classList.contains("matched")) {
+              if (!remainingCards[c].classList.contains("removed")) {
                 return;
               }
             }
@@ -111,17 +111,16 @@ function cardClicked(what) {
 
 
 
-           window.onload = function() {
+window.onload = function() {
+  shuffleCards();
+  
+  cardList = document.querySelectorAll(".card"); // collection of cards
 
+  cardCount = cardList.length; // how many cards are on the table
 
-            cardList = document.querySelectorAll(".card"); //collection of cards
-            cardCount = cardList.length; // how many cards are on the table
-
-            for (c = 0; c < cardCount; c++) {
-              cardList[c].onclick = function() { cardClicked(this);
-              }
-              cardsClicked = 0;
-              cardsClicked = 0;
-            }
-
-          }
+  for (c = 0; c < cardCount; c++) {
+    cardList[c].onclick = function() {
+      cardClicked(this);
+    }
+  }
+}

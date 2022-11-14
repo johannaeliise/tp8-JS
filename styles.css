@@ -2,8 +2,17 @@
 
 * {
   box-sizing: border-box;
+  background-color: #D1CFC0;
 }
-
+#title h1{
+  font-family: 'Verdana';
+  color: black;
+  font-size: 60px;
+  padding: 60;
+  position: relative;
+  text-align: center;
+ 
+}
 #mainTable {
   width: 80vw;
   height: 80vh;
@@ -16,7 +25,7 @@
   width: 20vw;
   height: 20vw;
   float: left;
-  border: 1vw solid #fff;
+  border: 1vw solid #D1CFC0;
 }
 
 .card div {
@@ -25,8 +34,13 @@
   height: 100%;
 }
 
+.card.clicked {
+  border: 1vw solid #333;
+}
+
 .cardBack {
-  background-color: #aaa;
+   background-image: url(images/card.png);
+    
 }
 
 .cardFront {
@@ -34,6 +48,24 @@
   display: none;
 }
 
+.clicked .cardBack {
+display: none;
+}
+
+.clicked .cardFront {
+display: block;
+}
+
+.card.removed {
+  box-shadow: none;
+  border: none;
+  background-color: #D1CFC0;
+  color: #D1CFC0;
+}
+.card.removed div {
+  display: none;
+}
+/* all the images */
 .pic1 .cardFront {
   background-image: url(images/one.png);
   background-size: cover;
@@ -85,4 +117,3 @@
 }
 
 }
-
